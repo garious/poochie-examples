@@ -12,7 +12,7 @@ function onReady(tag, observable) {
 
     var input = tag.tag({
         name: 'input',
-        attributes: {type: 'number', value: value},
+        attributes: {type: 'number', value: value}
     });
 
     var inc = observable.lift(increment);
