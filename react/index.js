@@ -1,5 +1,5 @@
 var deps = [
-    '/stdlib/tag.js',
+    'widgets.js',
     '/stdlib/observable.js'
 ];
 
@@ -7,23 +7,14 @@ function increment(x) {
     return String(parseInt(x, 10) + 1);
 }
 
-function onReady(tag, observable) {
-    var value = observable.observe("0");
-
-    var input = tag.tag({
-        name: 'input',
-        attributes: {type: 'number', value: value}
-    });
-
-    var inc = observable.lift(increment);
-    var output = tag.tag({
-        name: 'input',
-        attributes: {type: 'number', value: inc(value), readOnly: true}
-    });
-
-    var div = tag.tag({name: 'div', contents: [input, output]});
-
-    yoink.define(div);
+function onReady(widgets, observable) {
+    var o = observable.observe("0");
+    var oIncrement = observable.lift(increment);
+    var box = widgets.box([
+        widgets.numInput(o),
+        widgets.numInput(oIncrement(o), true)
+    ]);
+    yoink.define(box);
 }
 
 yoink.require(deps, onReady);
