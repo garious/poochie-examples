@@ -10,14 +10,9 @@ function increment(x) {
 function onReady(tag, observable) {
     var value = observable.observe("0");
 
-    function onChange(evt) {
-       value.set(evt.target.value);
-    }
-
     var input = tag.tag({
         name: 'input',
         attributes: {type: 'number', value: value},
-        handlers: {keyup: onChange, change: onChange}
     });
 
     var inc = observable.lift(increment);
