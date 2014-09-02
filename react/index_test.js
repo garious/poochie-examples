@@ -17,8 +17,8 @@ function onReady(assert, div) {
     assert.assertEq(inputValue.get(), '5');
     assert.assertEq(outputValue.get(), '6');
 
-    yoink.define('passed!');
+    define('passed!');
 }
 
-yoink.require(deps, onReady);
+require(deps, onReady);
 

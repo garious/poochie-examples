@@ -14,8 +14,8 @@ function onReady(widgets, observable) {
         widgets.numInput(o),
         widgets.numInput(oIncrement(o), true)
     ]);
-    yoink.define(box);
+    define(box);
 }
 
-yoink.require(deps, onReady);
+require(deps, onReady);
 

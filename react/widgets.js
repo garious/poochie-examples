@@ -22,11 +22,11 @@ function onReady(tag, observable) {
         });
     }
 
-    yoink.define({
+    define({
         numInput: numInput,
         box: box
     });
 }
 
-yoink.require(deps, onReady);
+require(deps, onReady);
 

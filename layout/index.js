@@ -42,9 +42,9 @@ function onReady(tag, layout) {
         ]);
     }
 
-    yoink.define(test());
+    define(test());
 }
 
 
-yoink.require(deps, onReady);
+require(deps, onReady);
 
