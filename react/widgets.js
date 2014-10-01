@@ -2,7 +2,7 @@ var deps = [
     '/stdlib/tag.js'
 ];
 
-function onReady(tag, observable) {
+function onReady(tag) {
 
     function numInput(v, readOnly) {
         return tag.tag({

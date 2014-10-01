@@ -8,7 +8,7 @@ function increment(x) {
 }
 
 function onReady(widgets, observable) {
-    var o = observable.observe("0");
+    var o = observable.publisher("0");
     var oIncrement = observable.lift(increment);
     var box = widgets.box([
         widgets.numInput(o),
