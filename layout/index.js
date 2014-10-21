@@ -3,21 +3,21 @@
 //
 
 var deps = [
-    '/stdlib/tag.js',
+    '/stdlib/dom.js',
     '/stdlib/layout.js'
 ];
 
-function onReady(tag, layout) {
+function onReady(dom, layout) {
 
     function testImg() {
-        return tag.tag({name: 'img', attributes: {src: 'logo.png'}, style: {border: '1px solid', padding: '5px', borderRadius: '5px'}});
+        return dom.element({name: 'img', attributes: {src: 'logo.png'}, style: {border: '1px solid', padding: '5px', borderRadius: '5px'}});
     }
 
     function hcatTest() {
         return layout.hcat([
-            tag.tag({name: 'span', style: {height: '20px', width: '70px'}, contents: 'hello'}), 
+            dom.element({name: 'span', style: {height: '20px', width: '70px'}, contents: 'hello'}), 
             layout.gap(10),
-            tag.tag({name: 'span', style: {height: '20px', width: '70px'}, contents: 'world'})
+            dom.element({name: 'span', style: {height: '20px', width: '70px'}, contents: 'world'})
         ]);
     }
 
@@ -25,7 +25,7 @@ function onReady(tag, layout) {
         var separator = layout.gap(30);
 
         function label(s, e) {
-            return layout.hcat([tag.tag({name: 'p', style: {width: '70px'}, contents: s}), layout.gap(10), e]);
+            return layout.hcat([dom.element({name: 'p', style: {width: '70px'}, contents: s}), layout.gap(10), e]);
         }
 
         return layout.hcat([

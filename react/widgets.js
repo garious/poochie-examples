@@ -1,11 +1,11 @@
 var deps = [
-    '/stdlib/tag.js'
+    '/stdlib/dom.js'
 ];
 
-function onReady(tag) {
+function onReady(dom) {
 
     function numInput(v, readOnly) {
-        return tag.tag({
+        return dom.element({
             name: 'input',
             attributes: {
                 type: 'number',
@@ -16,7 +16,7 @@ function onReady(tag) {
     }
 
     function box(contents) {
-        return tag.tag({
+        return dom.element({
             name: 'div',
             contents: contents
         });
