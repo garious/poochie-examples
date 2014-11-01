@@ -9,40 +9,35 @@ var deps = [
 
 function onReady(dom, layout) {
 
-    function testImg() {
-        return dom.element({name: 'img', attributes: {src: 'logo.png'}, style: {border: '1px solid', padding: '5px', borderRadius: '5px'}});
+    var gap10 = layout.gap(10);
+
+    var testImg = dom.element({
+        name: 'img',
+        attributes: {src: 'logo.png'},
+        style: {border: '1px solid', padding: '5px', borderRadius: '5px'}
+    });
+
+    var separator = layout.gap(30);
+
+    function label(s, e) {
+        return layout.hcat([dom.element({name: 'p', style: {width: '70px'}, contents: s}), gap10, e]);
     }
 
-    function hcatTest() {
-        return layout.hcat([
-            dom.element({name: 'span', style: {height: '20px', width: '70px'}, contents: 'hello'}), 
-            layout.gap(10),
-            dom.element({name: 'span', style: {height: '20px', width: '70px'}, contents: 'world'})
-        ]);
-    }
-
-    function test() {
-        var separator = layout.gap(30);
-
-        function label(s, e) {
-            return layout.hcat([dom.element({name: 'p', style: {width: '70px'}, contents: s}), layout.gap(10), e]);
-        }
-
-        return layout.hcat([
-            layout.gap(10),
+    var images = [testImg, gap10, testImg, gap10, testImg];
+    var div = layout.hcat([
+        gap10,
+        layout.vcat([
+            gap10,
             layout.vcat([
-                layout.gap(10),
-                layout.vcat([
-                    label('hcat', layout.hcat([testImg(), layout.gap(10), testImg(), layout.gap(10), testImg()])), separator,
-                    label('vcat', layout.vcat([testImg(), layout.gap(10), testImg(), layout.gap(10), testImg()])), separator,
-                ]),
-                layout.gap(10)
+                label('hcat', layout.hcat(images)), separator,
+                label('vcat', layout.vcat(images)), separator,
             ]),
-            layout.gap(10)
-        ]);
-    }
+            gap10
+        ]),
+        gap10
+    ]);
 
-    define(test());
+    define(div);
 }
 
 
