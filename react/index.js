@@ -12,7 +12,7 @@ function onReady(widgets, observable) {
     var oIncrement = observable.lift(increment);
     var box = widgets.box([
         widgets.numInput(o),
-        widgets.numInput(oIncrement(o), true)
+        widgets.numOutput(oIncrement(o))
     ]);
     define(box);
 }

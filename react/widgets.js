@@ -4,13 +4,28 @@ var deps = [
 
 function onReady(dom) {
 
-    function numInput(v, readOnly) {
+    function numInput(v) {
+        return dom.element({
+            name: 'input',
+            attributes: {
+                type: 'number',
+                value: v
+            },
+            handlers: {
+                change: function(evt) {
+                    v.set(evt.target.value);
+                }
+            }
+        });
+    }
+
+    function numOutput(v) {
         return dom.element({
             name: 'input',
             attributes: {
                 type: 'number',
                 value: v,
-                readOnly: readOnly
+                readOnly: true
             }
         });
     }
@@ -24,6 +39,7 @@ function onReady(dom) {
 
     define({
         numInput: numInput,
+        numOutput: numOutput,
         box: box
     });
 }
