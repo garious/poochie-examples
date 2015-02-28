@@ -12,9 +12,14 @@ function onReady(dom, layout) {
     var gap10 = layout.gap(10);
 
     var testImg = dom.element({
-        name: 'img',
-        attributes: {src: 'logo.png'},
-        style: {border: '1px solid', padding: '5px', borderRadius: '5px'}
+        name: 'div',
+        style: {
+            height: '100px',
+            width: '100px',
+            border: '1px solid',
+            padding: '5px',
+            borderRadius: '5px'
+        }
     });
 
     var separator = layout.gap(30);
