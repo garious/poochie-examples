@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/elazarl/go-bindata-assetfs"
 	"github.com/garious/yoink/jsappserver"
 	"github.com/garious/yoink/stdlib"
-	"github.com/elazarl/go-bindata-assetfs"
 	"log"
 	"net/http"
 )
