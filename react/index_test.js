@@ -8,14 +8,19 @@ function onReady(assert, div) {
     var outputValue = div.contents[1].attributes.value;
 
     // Verify initial state.
-    assert.eq(inputValue.get(), '0');
-    assert.eq(outputValue.get(), '1');
+    assert.eq(inputValue.get(), 0);
+    assert.eq(outputValue.get(), 1);
 
     // Set the left value to 5 and verify the output
     // text box contains the incremented value.
-    inputValue.set('5');
-    assert.eq(inputValue.get(), '5');
-    assert.eq(outputValue.get(), '6');
+    inputValue.set(5);
+    assert.eq(inputValue.get(), 5);
+    assert.eq(outputValue.get(), 6);
+
+    // Ensure it tolerates strings.
+    inputValue.set(parseInt('boom?', 10));
+    assert.eq(isNaN(inputValue.get()), true);
+    assert.eq(isNaN(outputValue.get()), true);
 
     define('passed!');
 }

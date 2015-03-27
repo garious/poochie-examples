@@ -14,7 +14,7 @@ function onReady(dom, observable) {
 
         function onChange(evt) {
             if (v instanceof observable.Observable) {
-                v.set(evt.target.value);
+                v.set(parseInt(evt.target.value, 10));
             }
         }
 
