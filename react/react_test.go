@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/garious/yoink/jsok"
+	"github.com/garious/yoink/stdlib"
 	"log"
 	"os"
 	"path/filepath"
@@ -16,6 +17,12 @@ func TestLint(t *testing.T) {
 }
 
 func TestTests(t *testing.T) {
+	// Add JavaScript package dependencies here.
+	stdlib.RestoreAssets("deps/stdlib", "")
+
+	// Cleanup when we're done.
+	defer os.RemoveAll("deps")
+
 	err := filepath.Walk(".", handleJsExec)
 	if err != nil {
 		log.Fatal(err)
@@ -39,7 +46,7 @@ func handleJsExec(path string, info os.FileInfo, err error) error {
 		log.Printf("Testing: %v", path)
 
 		modMap := make(map[string]string)
-		modMap["/stdlib"] = "../../stdlib"
+		modMap["/"] = "deps/"
 
 		return jsok.JsExecWithModuleMap(path, modMap)
 	}
