@@ -1,7 +1,6 @@
 all: bundle.js
 
-dirs = hello layout canvas react
-files = $(patsubst %,%/index.js,$(dirs))
+files = index.js $(wildcard */*.js)
 
 node_modules/.exists:
 	npm install

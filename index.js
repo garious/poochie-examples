@@ -1,11 +1,11 @@
 var dom = require('yoinkjs/dom');
 
-var modules = ['canvas-example', 'canvas-pie-example'];
+var modules = ['hello', 'canvas', 'layout', 'react'];
 
 function mkRow (nm) {
     return dom.element({
         name: 'a',
-        attributes: {href: nm + '.html'},
+        attributes: {href: nm + '/index.html'},
         style: {display: 'block'},
         contents: nm
     });
@@ -20,4 +20,3 @@ module.exports = dom.element({
     style: {margin: '10px'},
     contents: rows.concat(modules.map(mkRow))
 });
-
