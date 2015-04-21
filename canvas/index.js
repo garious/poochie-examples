@@ -1,32 +1,23 @@
-var deps = [
-    '/stdlib/dom.js',
-];
+var dom = require('yoinkjs/dom');
 
 var modules = ['canvas-example', 'canvas-pie-example'];
 
-function onReady (dom) {
-
-    function mkRow (nm) {
-        return dom.element({
-            name: 'a',
-            attributes: {href: nm},
-            style: {display: 'block'},
-            contents: nm
-        });
-    }
-    
-    var rows = [
-        dom.element({name: 'h3', contents: 'Modules'})
-    ];
-
-    var body = dom.element({
-        name: 'div',
-        style: {margin: '10px'},
-        contents: rows.concat(modules.map(mkRow))
+function mkRow (nm) {
+    return dom.element({
+        name: 'a',
+        attributes: {href: nm},
+        style: {display: 'block'},
+        contents: nm
     });
-
-    define(body);
 }
 
-require(deps, onReady);
+var rows = [
+    dom.element({name: 'h3', contents: 'Modules'})
+];
+
+module.exports = dom.element({
+    name: 'div',
+    style: {margin: '10px'},
+    contents: rows.concat(modules.map(mkRow))
+});
 

@@ -1,0 +1,13 @@
+{
+  "name": "yoinkjs-examples",
+  "version": "0.0.0",
+  "description": "examples",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:garious/yoinkjs-examples.git",
+    "type": "git"
+  },
+  "dependencies": {
+    "yoinkjs": "garious/yoinkjs"
+  }
+}
