@@ -1,13 +1,13 @@
 {
-  "name": "venus-examples",
+  "name": "poochie-examples",
   "version": "0.0.0",
   "description": "examples",
   "main": "index.js",
   "repository": {
-    "url": "git@github.com:garious/venus-examples.git",
+    "url": "git@github.com:garious/poochie-examples.git",
     "type": "git"
   },
   "dependencies": {
-    "venus": "garious/venus"
+    "poochie": "garious/poochie"
   }
 }

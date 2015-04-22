@@ -1,6 +1,6 @@
 var gizmos = require('./gizmos');
-var observable = require('yoinkjs/observable');
-var layout = require('yoinkjs/layout');
+var observable = require('poochie/observable');
+var layout = require('poochie/layout');
 
 function inc(x) {
     return x + 1;

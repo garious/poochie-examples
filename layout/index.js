@@ -2,8 +2,8 @@
 // 2D Layout tests
 //
 
-var dom = require('yoinkjs/dom');
-var layout = require('yoinkjs/layout');
+var dom = require('poochie/dom');
+var layout = require('poochie/layout');
 
 var gap10 = layout.gap(10);
 

@@ -1,4 +1,4 @@
-var dom = require('yoinkjs/dom');
+var dom = require('poochie/dom');
 
 var modules = ['hello', 'canvas', 'layout', 'react'];
 

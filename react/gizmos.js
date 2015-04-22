@@ -1,5 +1,5 @@
-var dom = require('yoinkjs/dom');
-var observable = require('yoinkjs/observable');
+var dom = require('poochie/dom');
+var observable = require('poochie/observable');
 
 var inputStyle = {
     fontSize: '24pt',
