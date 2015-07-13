@@ -1,13 +1,17 @@
 {
   "name": "poochie-examples",
-  "version": "0.0.0",
-  "description": "examples",
+  "version": "0.1.0",
+  "description": "Examples of the Poochie reactive frontend library",
+  "license": "BSD-3-Clause",
   "main": "index.js",
   "repository": {
     "url": "git@github.com:garious/poochie-examples.git",
     "type": "git"
   },
   "dependencies": {
-    "poochie": "garious/poochie"
+    "poochie": "^0.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.6"
   }
 }

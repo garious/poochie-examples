@@ -7,7 +7,7 @@ node_modules/.exists:
 	@touch $@
 
 bundle.js: $(files) node_modules/.exists
-	browserify $(addprefix -r ./,$(files)) -r poochie/dom -o $@ || rm -f $@
+	node_modules/.bin/browserify $(addprefix -r ./,$(files)) -r poochie/dom -o $@ || rm -f $@
 
 clean:
 	rm -f bundle.js
